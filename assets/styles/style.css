@@ -124,6 +124,7 @@ body {
 
 .currency {
     color: var(--cyan);
+    font-weight: var(--semi-bold);
 }
 
 
