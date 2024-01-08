@@ -1,0 +1,215 @@
+:root {
+    /* Colors */
+    --soft-blue: hsl(215, 51%, 70%);
+    --cyan: hsl(178, 100%, 50%);
+
+    --main-BG: hsl(217, 54%, 11%);
+    --card-BG: hsl(216, 50%, 16%);
+    --line: hsl(215, 32%, 27%);
+    --white: hsl(0, 0%, 100%);
+
+    /* Typography */
+    --font-size-heading: 22px;
+    --font-size-body: 18px;
+    --font-size-caption: 16px;
+    --font-size-mobile: 15px;
+
+    --font-family: 'Outfit', sans-serif;
+    --light: 300;
+    --regular: 400;
+    --semi-bold: 600;
+}
+
+
+/* CSS reset */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font: inherit;
+}
+
+body {
+    min-height: 100vh;
+}
+
+img, picture, video, svg {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Main */
+body {
+    background-color: var(--main-BG);
+    font-size: var(--font-size);
+    font-family: var(--font-family);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    background-color: var(--card-BG);
+    color: var(--soft-blue);
+    border-radius: 15px;
+    max-width: 350px;
+    box-shadow:  0px 25px 50px 25px rgba(0, 0, 0, 0.10);
+}
+
+
+/* Card Padding */
+.card > * {
+    margin: 0 1.5rem 1.5rem 1.5rem;
+}
+
+
+/* Card elements */
+
+.banner-image {
+    border-radius: 8px;
+    max-width: 300px;
+    margin-top: 1.5rem;
+}
+
+.icon-view {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    margin: 130px;
+} 
+
+
+.title {
+    color: var(--white);
+    font-size: var(--font-size-heading);
+    font-weight: var(--semi-bold);
+    margin-bottom: 16px;
+}
+
+.description {
+    font-size: var(--font-size-body);
+    font-weight: var(--light);
+    line-height: 26px;
+}
+
+.line {
+    height: 1px;
+    background-color: var(--line);
+    border: none;
+    margin-bottom: 16px;
+}
+
+/* Offer div */
+.offer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.currency, .time {
+    display: flex;
+    font-size: var(--font-size-caption);
+}
+
+.offer  p {
+    margin-left: 0.5rem;
+}
+
+.currency {
+    color: var(--cyan);
+}
+
+
+/* Author div */
+.author {
+    display: flex;
+    align-items: center;
+    margin-bottom: 32px;
+}
+
+.author img {
+    width: 33px;
+    border: 1px solid var(--white);
+    border-radius: 50%;
+}
+
+.author p {
+    margin-left: 16px;
+    font-size: var(--font-size-caption);
+}
+
+.name {
+    color: var(--white);
+}
+
+/* Active states */
+.title:hover, .name:hover{
+    color: var(--cyan);
+}
+
+.picture:hover:before, .picture:focus:before {
+    content: "";
+    position: absolute;
+    width: 302px;
+    height: 302px;
+    border-radius: 8px;
+    background-color: rgb(0, 255, 248, 0.53);
+    cursor: pointer;
+}
+
+.picture:hover  .icon-view {
+    display: block;
+}
+
+/* Mediaquery for mobile version */
+@media (max-width: 375px) {
+    .card {
+        box-shadow: none;
+        max-width: 327px;
+    }
+
+    .banner-image {
+        max-width: 278px;
+    }
+
+    .title {
+        margin-bottom: 12px;
+    }
+
+    .description, .offer {
+        margin-bottom: 16px;
+    }
+
+    .author {
+        margin-bottom: 1.5rem;
+    }
+
+    .description, .offer  p, .author p {
+        font-size: var(--font-size-mobile);
+    }
+
+    /* Active states */
+    .picture:hover:before {
+        width: 278px;
+        height: 278px;
+    }
+
+    .icon-view {
+        margin: 120px;
+    }
+
+    .title:hover, .name:hover{
+        color: var(--white);
+    }
+
+    .title:active, .name:active {
+        color: var(--cyan);
+    }
+}
