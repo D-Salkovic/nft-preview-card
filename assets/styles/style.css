@@ -196,6 +196,10 @@ body {
         font-size: var(--font-size-mobile);
     }
 
+    .currency {
+        font-weight: var(--regular);
+    }
+
     /* Active states */
     .picture:hover:before {
         width: 278px;
